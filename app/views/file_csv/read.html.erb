@@ -1,0 +1,35 @@
+<% @users.each do |element| %>
+  <li>
+  	<%= "Id: "%>
+  	<%= element['id'] %>
+  	<%= "Name: "%>
+  	<%= element['name'] %>
+  	<%= "Contact No: "%>
+  	<%= element['contact_no'] %>
+  	<%= "Email: "%>
+  	<%= element['email'] %>
+  </li>
+  
+<% end %>
+
+<%= form_tag(:action => 'write') do %>
+  <p>
+  	Ïd:
+    <%= text_field_tag('id',params[:id])%>
+  </p>
+  <p>
+  	Name:
+    <%= text_field_tag('name',params[:name])%>
+  </p>
+  <p>
+  	Contact No:
+    <%= text_field_tag('contact_no',params[:contact_no])%>
+  </p>
+  <p>
+  	Email Id:
+    <%= text_field_tag('email',params[:email])%>
+  </p>
+  <p>
+    <%= submit_tag("Submit Entry")%>
+  </p>
+<% end %>
